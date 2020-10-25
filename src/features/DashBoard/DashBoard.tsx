@@ -1,5 +1,4 @@
-import React, { useState, FormEvent , useEffect} from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import React, { useState, FormEvent, useEffect } from "react";
 import {
   Grid,
   Container,
@@ -11,16 +10,12 @@ import {
 } from "@material-ui/core";
 import Chart from "../graph/Chart";
 import UserTable from "../table/UserTable";
-import AccountCircle from "@material-ui/icons/AccountCircle";
-import { useAtcoderDataReducer, Data } from "../atcoderData/useAtcoderDataReducer";
+import {
+  useAtcoderDataReducer,
+  Data,
+} from "../atcoderData/useAtcoderDataReducer";
 import { fetchData } from "../atcoderData/fetchData";
 import rateJson from "../atcoderData/rate.json";
-
-const useStyles = makeStyles((theme) => ({
-  margin: {
-    margin: theme.spacing(1),
-  },
-}));
 
 const DashBoard = () => {
   const [mainUser, setMainUser] = useState("");
@@ -28,7 +23,7 @@ const DashBoard = () => {
   const [data, dispatch] = useAtcoderDataReducer();
 
   const handleSubmit = (e: FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     setMainUser(inputName);
   };
 
@@ -38,7 +33,7 @@ const DashBoard = () => {
 
   useEffect(() => {
     const effectData = async () => {
-      const rateData: typeof rateJson = await fetchData({userName: mainUser});
+      const rateData: typeof rateJson = await fetchData({ userName: mainUser });
       const mainData: Data = {
         mainUser: mainUser,
         usersData: [
@@ -51,10 +46,10 @@ const DashBoard = () => {
           },
         ],
       };
-      dispatch({type: 'fetch', payload: mainData});
-    }
+      dispatch({ type: "fetch", payload: mainData });
+    };
     effectData();
-  }, [mainUser]);
+  }, [mainUser, dispatch]);
 
   return (
     <div>

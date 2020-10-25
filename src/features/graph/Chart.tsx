@@ -1,6 +1,5 @@
 import React, {useReducer} from "react";
 import { Line } from "react-chartjs-2";
-import AtcoderUserDataType from "../atcoderData/atcoderUserDataType";
 
 type dataAction = {
   type: 'increment' | 'decrement'

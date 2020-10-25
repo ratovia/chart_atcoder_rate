@@ -1,6 +1,4 @@
 import { useReducer } from "react";
-import { fetchData } from "./fetchData";
-import rateJson from "./rate.json";
 import AtcoderUserDataType from "./atcoderUserDataType";
 export type Data = {
   mainUser: string;
@@ -13,7 +11,6 @@ type action = {
 
 export const useAtcoderDataReducer = (): any => {
   const mainUser: string = "ratovia";
-  // const rateData: typeof rateJson = fetchData({userName: mainUser});
   const initialData: Data = {
     mainUser: mainUser,
     usersData: [
