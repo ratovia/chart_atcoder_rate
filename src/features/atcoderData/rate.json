@@ -1,0 +1,68 @@
+[
+  {
+    "Date": "2020-05-03 22:40:00+0900",
+    "Contest": "AtCoder Beginner Contest 166",
+    "New Rating": "1",
+    "Diff": "-"
+  },
+  {
+    "Date": "2020-05-10 22:40:00+0900",
+    "Contest": "AtCoder Beginner Contest 167",
+    "New Rating": "8",
+    "Diff": "+7"
+  },
+  {
+    "Date": "2020-05-17 22:40:00+0900",
+    "Contest": "AtCoder Beginner Contest 168",
+    "New Rating": "33",
+    "Diff": "+25"
+  },
+  {
+    "Date": "2020-05-30 23:00:00+0900",
+    "Contest": "NOMURA Programming Competition 2020",
+    "New Rating": "47",
+    "Diff": "+14"
+  },
+  {
+    "Date": "2020-05-31 22:40:00+0900",
+    "Contest": "AtCoder Beginner Contest 169",
+    "New Rating": "102",
+    "Diff": "+55"
+  },
+  {
+    "Date": "2020-06-13 23:00:00+0900",
+    "Contest": "Tokio Marine & Nichido Fire Insurance Programming Contest 2020",
+    "New Rating": "184",
+    "Diff": "+82"
+  },
+  {
+    "Date": "2020-06-14 22:40:00+0900",
+    "Contest": "AtCoder Beginner Contest 170",
+    "New Rating": "243",
+    "Diff": "+59"
+  },
+  {
+    "Date": "2020-06-20 23:30:00+0900",
+    "Contest": "AtCoder Grand Contest 046",
+    "New Rating": "-",
+    "Diff": "-"
+  },
+  {
+    "Date": "2020-06-21 22:40:00+0900",
+    "Contest": "AtCoder Beginner Contest 171",
+    "New Rating": "240",
+    "Diff": "-3"
+  },
+  {
+    "Date": "2020-08-29 22:40:00+0900",
+    "Contest": "AtCoder Beginner Contest 177",
+    "New Rating": "203",
+    "Diff": "-37"
+  },
+  {
+    "Date": "2020-09-26 22:40:00+0900",
+    "Contest": "ACL Beginner Contest",
+    "New Rating": "223",
+    "Diff": "+20"
+  }
+]
