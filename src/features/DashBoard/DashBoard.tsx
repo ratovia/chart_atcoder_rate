@@ -12,7 +12,6 @@ import Chart from "../graph/Chart";
 import UserTable from "../table/UserTable";
 import {
   useAtcoderDataReducer,
-  Data,
 } from "../atcoderData/useAtcoderDataReducer";
 import { fetchData } from "../atcoderData/fetchData";
 import rateJson from "../atcoderData/rate.json";
@@ -33,20 +32,12 @@ const DashBoard = () => {
 
   useEffect(() => {
     const effectData = async () => {
+      if (mainUser === "") {
+        return false;
+      }
       const rateData: typeof rateJson = await fetchData({ userName: mainUser });
-      const mainData: Data = {
-        mainUser: mainUser,
-        usersData: [
-          {
-            userName: mainUser,
-            rateData: rateData,
-            entryTimes: rateData.length,
-            highest: 10,
-            rating: 10,
-          },
-        ],
-      };
-      dispatch({ type: "fetch", payload: mainData });
+      
+      dispatch({ type: "set", payload: rateData , userName: mainUser});
     };
     effectData();
   }, [mainUser, dispatch]);
@@ -76,7 +67,7 @@ const DashBoard = () => {
         {data && (
           <Grid container justify="center">
             <Grid item xs={9}>
-              <Chart></Chart>
+              <Chart atcoderData={data}></Chart>
             </Grid>
             <Grid item xs={12}>
               <UserTable atcoderData={data}></UserTable>

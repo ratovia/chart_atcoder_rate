@@ -8,6 +8,7 @@ const api = axiosBase.create({
 type parameter = { userName: string }
 
 export const fetchData: any = async (parameter: parameter) => {
-  const fetchRate: typeof rateJson = await api.get(`/rate/${parameter.userName}`)
+  const fetchAPI = await api.get(`/rate/${parameter.userName}`)
+  const fetchRate: typeof rateJson = fetchAPI.data
   return fetchRate
 }

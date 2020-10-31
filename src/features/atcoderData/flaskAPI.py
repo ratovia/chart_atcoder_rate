@@ -11,7 +11,8 @@ CORS(api)
 def get_user(userName):
     data = pd.read_html("https://atcoder.jp/users/{}/history".format(userName))
     adopt = data[0].drop(columns=['Rank', 'Performance','Unnamed: 6'])
-
+    adopt = adopt.rename(columns={'New Rating': 'NewRating'})
+    adopt["Date"] = pd.to_datetime(adopt["Date"]).dt.strftime('%Y年%m月%d日')
     print(adopt)
     result = adopt.to_json(orient='records')
 
