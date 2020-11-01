@@ -1,49 +1,42 @@
-import React, { useState, FormEvent, useEffect } from "react";
+import React, { useState, useEffect, Dispatch, SetStateAction } from "react";
 import {
   Grid,
   Container,
   Toolbar,
   Typography,
   AppBar,
-  TextField,
-  Button,
 } from "@material-ui/core";
 import Chart from "../graph/Chart";
 import UserTable from "../table/UserTable";
-import {
-  useAtcoderDataReducer,
-} from "../atcoderData/useAtcoderDataReducer";
+import { useAtcoderDataReducer } from "../atcoderData/useAtcoderDataReducer";
 import { fetchData } from "../atcoderData/fetchData";
 import rateJson from "../atcoderData/rate.json";
+import UserForm from "../userForm/UserForm";
+
+// eslint-disable-next-line
+export const MainUserContext: any = React.createContext([
+  "",
+  {} as Dispatch<SetStateAction<string>>,
+]);
 
 const DashBoard = () => {
   const [mainUser, setMainUser] = useState("");
-  const [inputName, setInputName] = useState("");
   const [data, dispatch] = useAtcoderDataReducer();
-
-  const handleSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    setMainUser(inputName);
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputName(e.target.value);
-  };
-
+  
   useEffect(() => {
     const effectData = async () => {
       if (mainUser === "") {
         return false;
       }
       const rateData: typeof rateJson = await fetchData({ userName: mainUser });
-      
-      dispatch({ type: "set", payload: rateData , userName: mainUser});
+
+      dispatch({ type: "set", payload: rateData, userName: mainUser });
     };
     effectData();
   }, [mainUser, dispatch]);
 
   return (
-    <div>
+    <MainUserContext.Provider value={[mainUser, setMainUser]}>
       <AppBar position="static">
         <Toolbar variant="dense">
           <Typography variant="h6" color="inherit">
@@ -52,18 +45,7 @@ const DashBoard = () => {
         </Toolbar>
       </AppBar>
       <Container>
-        <form onSubmit={handleSubmit}>
-          <TextField
-            id="filled-secondary"
-            label="Your AtCoderId"
-            variant="filled"
-            name="name"
-            onChange={handleChange}
-          />
-          <Button variant="contained" color="primary" type="submit">
-            SEND
-          </Button>
-        </form>
+        <UserForm></UserForm>
         {data && (
           <Grid container justify="center">
             <Grid item xs={9}>
@@ -75,7 +57,7 @@ const DashBoard = () => {
           </Grid>
         )}
       </Container>
-    </div>
+    </MainUserContext.Provider>
   );
 };
 
