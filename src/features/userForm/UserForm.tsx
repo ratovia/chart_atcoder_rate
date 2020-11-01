@@ -17,7 +17,7 @@ const UserForm = () => {
   };
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} style={{ padding: "20px 0px", display: "flex", justifyContent: "center", alignItems: "center"}}>
         <TextField
           id="filled-secondary"
           label="Your AtCoderId"
@@ -25,7 +25,7 @@ const UserForm = () => {
           name="name"
           onChange={handleChange}
         />
-        <Button variant="contained" color="primary" type="submit">
+        <Button variant="contained" color="primary" type="submit" style={{margin: "0px 20px", verticalAlign: "center"}}>
           SEND
         </Button>
       </form>
