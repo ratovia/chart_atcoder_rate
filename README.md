@@ -1,3 +1,10 @@
+chart_atcoder_rate is the simple rating app for atcoder.
+
+plz watch this demo.
+https://user-images.githubusercontent.com/15213843/111671699-8bdfc980-885c-11eb-9a86-4a9062108d1f.mov
+
+----
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
 ## Available Scripts
