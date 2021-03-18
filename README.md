@@ -1,7 +1,7 @@
 chart_atcoder_rate is the simple rating app for atcoder.
 
 plz watch this demo.
-https://user-images.githubusercontent.com/15213843/111671699-8bdfc980-885c-11eb-9a86-4a9062108d1f.mov
+[![Image from Gyazo](https://i.gyazo.com/8ce649c85ba36ec8a205f7baf151948c.gif)](https://gyazo.com/8ce649c85ba36ec8a205f7baf151948c)
 
 ----
 
